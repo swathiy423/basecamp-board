@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basecamp Board — Team Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wordmark">
+    <span class="wordmark-dot"></span>
+    Basecamp Board
+  </div>
+  <button class="btn-primary" id="openModalBtn">+ New Project</button>
+</header>
+
+<main class="board" id="board">
+  <section class="column" data-status="todo">
+    <h2 class="column-title">To Do <span class="count" id="count-todo">0</span></h2>
+    <div class="card-list" id="list-todo"></div>
+  </section>
+
+  <section class="column" data-status="progress">
+    <h2 class="column-title">In Progress <span class="count" id="count-progress">0</span></h2>
+    <div class="card-list" id="list-progress"></div>
+  </section>
+
+  <section class="column" data-status="done">
+    <h2 class="column-title">Done <span class="count" id="count-done">0</span></h2>
+    <div class="card-list" id="list-done"></div>
+  </section>
+</main>
+
+<!-- New Project Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>New Project</h2>
+    <form id="projectForm">
+      <label for="name">Project name</label>
+      <input type="text" id="name" placeholder="e.g. Website Redesign" required>
+
+      <label for="deadline">Deadline</label>
+      <input type="date" id="deadline" required>
+
+      <label for="team">Team members <span class="hint">(comma separated)</span></label>
+      <input type="text" id="team" placeholder="e.g. Asha, Ravi, Meera">
+
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn-primary">Add Project</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
