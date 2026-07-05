@@ -11,8 +11,12 @@ Deadline chips automatically change color:
 Data is saved in your browser's local storage, so it persists between visits.
 
 ## Features
-- Add new projects with a name, deadline, and team members  
-- Move projects between columns
+- Add, edit, and delete projects
+- Drag and drop cards between columns (or use the move buttons)
+- Priority tags: High / Medium / Low
+- Subtask checklists with an auto-updating progress bar
+- Search by project name or team member, filter by priority
+- Dark / light theme toggle
 - Color-coded deadline urgency
 - No backend or install required — just open `index.html`
 
