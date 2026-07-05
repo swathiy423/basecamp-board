@@ -15,7 +15,20 @@
     <span class="wordmark-dot"></span>
     Basecamp Board
   </div>
-  <button class="btn-primary" id="openModalBtn">+ New Project</button>
+
+  <div class="topbar-controls">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search projects...">
+
+    <select id="priorityFilter" class="filter-select">
+      <option value="all">All priorities</option>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <button class="icon-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+    <button class="btn-primary" id="openModalBtn">+ New Project</button>
+  </div>
 </header>
 
 <main class="board" id="board">
@@ -35,10 +48,10 @@
   </section>
 </main>
 
-<!-- New Project Modal -->
+<!-- New / Edit Project Modal -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
-    <h2>New Project</h2>
+    <h2 id="modalTitle">New Project</h2>
     <form id="projectForm">
       <label for="name">Project name</label>
       <input type="text" id="name" placeholder="e.g. Website Redesign" required>
@@ -49,9 +62,23 @@
       <label for="team">Team members <span class="hint">(comma separated)</span></label>
       <input type="text" id="team" placeholder="e.g. Asha, Ravi, Meera">
 
+      <label for="priority">Priority</label>
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <label>Subtasks</label>
+      <div class="subtask-input-row">
+        <input type="text" id="subtaskInput" placeholder="Add a subtask...">
+        <button type="button" class="btn-ghost" id="addSubtaskBtn">Add</button>
+      </div>
+      <ul class="subtask-editor-list" id="subtaskEditorList"></ul>
+
       <div class="modal-actions">
         <button type="button" class="btn-ghost" id="cancelBtn">Cancel</button>
-        <button type="submit" class="btn-primary">Add Project</button>
+        <button type="submit" class="btn-primary" id="submitBtn">Add Project</button>
       </div>
     </form>
   </div>
