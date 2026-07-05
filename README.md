@@ -11,7 +11,7 @@ Deadline chips automatically change color:
 Data is saved in your browser's local storage, so it persists between visits.
 
 ## Features
-- Add new projects with a name, deadline, and team members
+- Add new projects with a name, deadline, and team members  
 - Move projects between columns
 - Color-coded deadline urgency
 - No backend or install required — just open `index.html`
